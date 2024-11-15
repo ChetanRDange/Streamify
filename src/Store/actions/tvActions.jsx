@@ -2,6 +2,7 @@ export { removetv } from "../reducers/tvSlice";
 import { combineSlices } from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
 import { loadtv } from "../reducers/tvSlice.jsx";
+import React from 'react';
 
 
 export const asyncloadtv = (id) => async (dispatch, getState) => {

@@ -1,4 +1,6 @@
 import AlertComponent from './AlertComponent';
+import React from 'react';
+
 const Loading = () => {
     return (
         <>

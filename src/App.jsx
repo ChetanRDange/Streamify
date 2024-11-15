@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+
 import Trending from "./Components/Trending"
 import Home from "./Components/Home"
 import Popular from "./Components/Popular"

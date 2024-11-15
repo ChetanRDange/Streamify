@@ -2,6 +2,7 @@ export { removeperson } from "../reducers/personslice";
 import { combineSlices } from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
 import { loadperson } from "../reducers/personslice";
+import React from 'react';
 
 export const asyncloadperson = (id) => async (dispatch, getState) => {
     try {

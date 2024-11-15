@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from "react-router-dom"
 import noimage from "../../../public/no_images.png"
 function Cards({ data, title }) {

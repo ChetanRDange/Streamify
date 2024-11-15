@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import React from 'react';
+
 import { useNavigate } from "react-router-dom"
 import axios from "../utils/axios"
 import InfiniteScroll from "react-infinite-scroll-component"

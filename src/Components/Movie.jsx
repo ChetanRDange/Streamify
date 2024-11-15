@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import React from 'react';
+
 import axios from "../utils/axios"
 import InfiniteScroll from "react-infinite-scroll-component"
 import Topnav from "./partials/Topnav"
