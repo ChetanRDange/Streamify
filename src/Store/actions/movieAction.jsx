@@ -1,7 +1,7 @@
-export { removemovie } from "../reducers/movieSlice";
+export { removemovie } from "../reducers/movieslice";
 import { combineSlices } from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
-import { loadmovie } from "../reducers/movieSlice";
+import { loadmovie } from "../reducers/movieslice";
 import React from 'react';
 
 export const asyncloadmovie = (id) => async (dispatch, getState) => {
