@@ -1,4 +1,4 @@
-import ReactPlayer from "React-player";
+import ReactPlayer from "react-player";
 import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Notfound from "../Notfound";
