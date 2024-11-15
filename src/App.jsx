@@ -11,6 +11,7 @@ import TvDetails from './Components/TvDetails';
 import PersonDetails from './Components/PersonDetails';
 import Trailer from './Components/partials/Trailer';
 import Notfound from './Components/Notfound';
+
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 
