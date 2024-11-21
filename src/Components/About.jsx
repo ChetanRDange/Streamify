@@ -15,7 +15,7 @@ const About = () => {
             <div className=" bg-zinc-900 gap-[15%] w-screen h-full  w-full text-white flex  items-center p-10">
 
                 <div>
-                    <img className="object-cover ml-10 h-[50vh] " src="../../public/photo.jpeg" alt="" />
+                    <img className="object-cover ml-10 h-[50vh] " src="/photo.jpeg" alt="" />
                 </div>
 
                 {/* Header Section with Icons  and some */}
