@@ -18,7 +18,7 @@ const About = () => {
                     <img className="object-cover ml-10 h-[50vh] " src="../../public/photo.jpeg" alt="" />
                 </div>
 
-                {/* Header Section with Icons */}
+                {/* Header Section with Icons  and some */}
                 <div>
 
                     <div className="flex items-center justify-between w-full max-w-4xl">
