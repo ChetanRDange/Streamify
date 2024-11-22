@@ -6,7 +6,7 @@ const HorizontalCards = ({ data }) => {
     return (
       
             
-            <div  className="w-full flex  overflow-y-hidden mb-5  p-5 ">
+            <div  className="w-full sm:flex  overflow-y-hidden mb-5  p-5 ">
                 {data.length > 0 ?data.map((item, i) => (
                     <Link to={`/${item.media_type}/details/${item.id}`} key={i} className="min-w-[15%] h-[37vh] bg-zinc-900 hover:scale-105 rounded-lg mr-5 mb-5">
                          <img className="w-full h-[55%] rounded-lg object-cover" src={item.backdrop_path || item.poster_path ? `https://image.tmdb.org/t/p/original${item.backdrop_path || item.poster_path}` : noimage } alt="" />

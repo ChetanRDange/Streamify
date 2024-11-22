@@ -13,7 +13,14 @@ const Home = () => {
     const [wallpepar, setwallpepar] = useState(null);
     const [trending, settrending] = useState(null);
     const [category, setcategory] = useState("all");
-    
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to control the drawer
+
+    // Function to toggle the drawer state
+    const toggleDrawer = () => {
+        setIsDrawerOpen((prev) => !prev);
+    };
+
+
     //this give you a header wallpepar
     const GetHeaderWallpepar = async () => {
         try {
@@ -42,16 +49,30 @@ const Home = () => {
         GetTrending();
         !wallpepar && GetHeaderWallpepar();
     }, [category])
-  
+
 
 
     return wallpepar && trending ? (
         <>
-           
-          < Sidenav />
-           
-        
-            <div className="w-[80%] h-full overflow-auto overflow-x-hidden">
+
+            {/* Drawer toggle button */}
+            <button
+                className="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md shadow-md 2xl:hidden"
+                onClick={toggleDrawer}
+            >
+                {isDrawerOpen ? "Close Menu" : "Open Menu"}
+            </button>
+
+            {/* Sidenav with drawer logic */}
+            <div
+                className={`fixed top-0 left-0 h-full z-40 bg-gray-900 transition-transform duration-300 ease-in-out ${isDrawerOpen ? "translate-x-0" : "-translate-x-full"
+                    } 2xl:translate-x-0 2xl:relative 2xl:w-[20%]`}
+            >
+                <Sidenav />
+            </div>
+
+
+            <div className="w-[100%] h-full overflow-auto overflow-x-hidden">
                 <Topnav />
                 <Header data={wallpepar} />
 
@@ -60,14 +81,14 @@ const Home = () => {
                         Trending
                     </h1>
 
-                    <DropDown title="Filter" options={["tv", "movie", "all"]} func={((e) =>setcategory(e.target.value))} />
+                    <DropDown title="Filter" options={["tv", "movie", "all"]} func={((e) => setcategory(e.target.value))} />
 
                 </div>
                 <HorizontalCards data={trending} func={setcategory} />
             </div>
 
         </>
-    ) : < Loading/>
+    ) : < Loading />
 }
 export default Home;
 
