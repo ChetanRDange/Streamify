@@ -57,7 +57,7 @@ const Home = () => {
 
             {/* Drawer toggle button */}
             <button
-                className="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md shadow-md 2xl:hidden"
+                className="fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md shadow-md xl:hidden"
                 onClick={toggleDrawer}
             >
                 {isDrawerOpen ? "Close Menu" : "Open Menu"}
@@ -66,7 +66,7 @@ const Home = () => {
             {/* Sidenav with drawer logic */}
             <div
                 className={`fixed top-0 left-0 h-full z-40 bg-gray-900 transition-transform duration-300 ease-in-out ${isDrawerOpen ? "translate-x-0" : "-translate-x-full"
-                    } 2xl:translate-x-0 2xl:relative 2xl:w-[20%]`}
+                    } xl:translate-x-0 xl:relative xl:w-[20%]`}
             >
                 <Sidenav />
             </div>

@@ -7,7 +7,7 @@ const AlertComponent = () => {
     const hasAlertBeenShown = localStorage.getItem('alertShown');
 
     if (!hasAlertBeenShown) {
-      alert("Please kindly use VPN and also view in pc for better experience .");
+      alert("Please kindly use VPN for better experience .");
       localStorage.setItem('alertShown', 'true');
     }
   }, []); 
