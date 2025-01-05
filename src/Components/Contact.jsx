@@ -22,6 +22,8 @@ const Contact = () => {
     e.preventDefault();
     // Handle form submission logic here, such as sending data to an API
     console.log("Form Data Submitted:", formData);
+    localStorage.setItem("formData",JSON.stringify(formData))
+    console.log("data added to localstorage")
   };
 
   return (

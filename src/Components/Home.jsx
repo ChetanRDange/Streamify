@@ -13,7 +13,7 @@ const Home = () => {
     const [wallpepar, setwallpepar] = useState(null);
     const [trending, settrending] = useState(null);
     const [category, setcategory] = useState("all");
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to control the drawer
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false); 
 
     // Function to toggle the drawer state
     const toggleDrawer = () => {

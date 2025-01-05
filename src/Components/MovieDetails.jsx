@@ -27,7 +27,7 @@ const Moviedetails = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
 
-    }} className=" relative w-screen h-[150vh] px-[10%]">
+    }} className=" relative w-full min-h-screen px-4 sm:px-6 md:px-8 lg:px-[10%] overflow-x-hidden">
 
         {/* part 1 navigation*/}
         <nav className="w-full h-[10vh] text-zinc-100 flex items-center gap-10 text-xl  ">
@@ -47,7 +47,7 @@ const Moviedetails = () => {
             </a>
         </nav>
         {/*part 2 poster and details */}
-        <div className="w-full flex ">
+        <div className="w-full sm:flex sm:justify-center items-center ">
 
             <img
                 className="rounded-lg shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[50vh] object-cover"
