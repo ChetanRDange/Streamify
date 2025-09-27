@@ -6,19 +6,19 @@ const HorizontalCards = ({ data }) => {
     return (
         <div className="w-full">
             {data && data.length > 0 ? (
-                <div className="flex overflow-x-auto scrollbar-hide gap-4 md:gap-6 pb-4 px-1">
+                <div className="flex overflow-x-auto scrollbar-hide gap-3 pb-4 px-1">
                     {data.map((item, i) => (
                         <Link
                             to={`/${item.media_type || 'movie'}/details/${item.id}`}
                             key={i}
                             className="flex-shrink-0 group"
                         >
-                            {/* Responsive Card Container */}
-                            <div className="w-32 sm:w-36 md:w-48 lg:w-52 bg-zinc-900 hover:bg-zinc-800 rounded-xl md:rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl border border-zinc-700/30">
+                            {/* Card Container */}
+                            <div className="w-32 md:w-40 bg-gradient-to-b from-zinc-800 to-zinc-900 rounded-2xl overflow-hidden shadow-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl border border-zinc-700/50">
                                 {/* Image Container */}
                                 <div className="relative overflow-hidden">
                                     <img
-                                        className="w-full h-48 sm:h-52 md:h-64 lg:h-72 object-cover transition-transform duration-300 group-hover:scale-110"
+                                        className="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-110"
                                         src={
                                             item.poster_path || item.backdrop_path
                                                 ? `https://image.tmdb.org/t/p/w500${item.poster_path || item.backdrop_path}`
@@ -46,14 +46,14 @@ const HorizontalCards = ({ data }) => {
                                     </div>
                                 </div>
 
-                                {/* Content - Responsive */}
-                                <div className="p-3 md:p-4">
-                                    <h3 className="text-white text-sm md:text-base font-bold mb-1 md:mb-2 line-clamp-2 leading-tight">
+                                {/* Content */}
+                                <div className="p-3">
+                                    <h3 className="text-white text-sm font-bold mb-1 line-clamp-2 leading-tight">
                                         {item.title || item.original_name || item.name || item.original_title}
                                     </h3>
 
-                                    {/* Meta info - Better desktop styling */}
-                                    <div className="flex items-center justify-between text-xs md:text-sm text-zinc-400">
+                                    {/* Meta info */}
+                                    <div className="flex items-center justify-between text-xs text-zinc-400">
                                         <span className="capitalize">
                                             {item.media_type || 'movie'}
                                         </span>

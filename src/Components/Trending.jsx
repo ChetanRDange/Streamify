@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Topnav from "./partials/Topnav";
+import React from "react";
 import Dropdown from "./partials/Dropdown";
 import Cards from "./partials/Cards";
+import BottomNav from "./partials/BottomNav";
+import MobileMenu from "./partials/MobileMenu";
 import Loading from "./Loading";
 import axios from "../utils/axios";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -46,30 +49,47 @@ const Trending = () => {
   }, [category, duration]);
 
   return trending.length > 0 ? (
-    <div className="w-full min-h-screen bg-[#1F1E24] text-white">
-      {/* Header Section */}
-      <div className="px-4 py-6 flex flex-wrap justify-between items-center gap-4">
-        <h1 className="text-2xl font-semibold text-zinc-400 flex items-center">
-          <i
-            onClick={() => navigate(-1)}
-            className="hover:text-[#6556CD] ri-arrow-left-line cursor-pointer mr-2"
-          ></i>
-          Trending
-        </h1>
+    <div className="w-full min-h-screen pb-20 md:pb-8">
+      {/* Mobile Menu */}
+      <MobileMenu />
 
-        {/* Navigation Section */}
-        <div className="flex flex-wrap items-center gap-4">
-          <Topnav />
-          <Dropdown
-            title="Category"
-            options={["movie", "tv", "all"]}
-            func={(e) => setCategory(e.target.value)}
-          />
-          <Dropdown
-            title="Duration"
-            options={["week", "day"]}
-            func={(e) => setDuration(e.target.value)}
-          />
+      {/* Header */}
+      <div className="sticky top-0 bg-[#1F1E24] z-30 border-b border-zinc-800">
+        <div className="px-4 py-4">
+          {/* Title and Back Button */}
+          <div className="flex items-center mb-4">
+            <button
+              onClick={() => navigate(-1)}
+              className="mr-4 p-2 text-zinc-400 hover:text-[#6556CD] hover:bg-zinc-800 rounded-full transition-colors"
+            >
+              <i className="ri-arrow-left-line text-xl"></i>
+            </button>
+            <div>
+              <h1 className="text-xl md:text-2xl font-semibold text-white">
+                Trending
+              </h1>
+              <p className="text-sm text-zinc-500 capitalize">
+                {category} • {duration}
+              </p>
+            </div>
+          </div>
+
+          {/* Search and Filters */}
+          <div className="space-y-3">
+            <Topnav />
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Dropdown
+                title="Category"
+                options={["movie", "tv", "all"]}
+                func={(e) => setCategory(e.target.value)}
+              />
+              <Dropdown
+                title="Duration"
+                options={["week", "day"]}
+                func={(e) => setDuration(e.target.value)}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -78,11 +98,23 @@ const Trending = () => {
         dataLength={trending.length}
         next={getTrending}
         hasMore={hasMore}
-        loader={<h1 className="text-center text-lg font-medium">Loading...</h1>}
-        className="px-4"
+        loader={
+          <div className="flex justify-center items-center py-8">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#6556CD]"></div>
+            <span className="ml-3 text-zinc-400">Loading more content...</span>
+          </div>
+        }
+        endMessage={
+          <div className="text-center py-8">
+            <p className="text-zinc-500">You have seen all trending content!</p>
+          </div>
+        }
       >
         <Cards data={trending} title={category} />
       </InfiniteScroll>
+
+      {/* Bottom Navigation */}
+      <BottomNav />
     </div>
   ) : (
     <Loading />

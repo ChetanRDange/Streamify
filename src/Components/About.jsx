@@ -1,94 +1,139 @@
-import { Link, useNavigate } from "react-router-dom";
-import React from 'react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import BottomNav from "./partials/BottomNav";
+import MobileMenu from "./partials/MobileMenu";
 
 const About = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="flex relative lg:h-screen  flex-col">
-            <Link
-                onClick={() => navigate(-1)}
-                className="hover:text-[#6556CD] absolute top-5 left-4 sm:left-9 text-2xl sm:text-4xl bg-zinc-900 ri-arrow-left-line">
-            </Link>
+        <div className="w-full min-h-screen pb-20 md:pb-8 bg-[#1F1E24]">
+            {/* Mobile Menu */}
+            <MobileMenu />
 
-            <div className="bg-zinc-900 gap-6 lg:gap-[15%] sm:h-[150vh] w-screen min-h-screen flex flex-col lg:flex-row items-center p-6 lg:p-10 text-white">
-                {/* Image Section */}
-                <div className="flex-shrink-0">
-                    <img
-                        className="object-cover w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto mx-auto lg:ml-10"
-                        src="/photo.jpeg"
-                        alt="Chetan"
-                    />
-                </div>
-
-                {/* Content Section */}
-                <div className="flex flex-col items-center lg:items-start w-full text-center lg:text-left">
-                    {/* Header Section with Icons */}
-                    <div className="flex items-center justify-center lg:justify-start w-full max-w-4xl">
-                        <div className="text-2xl sm:text-4xl flex gap-4 sm:gap-6 mt-4">
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="tel:8459011161"
-                                aria-label="Phone"
-                                className="hover:text-blue-400">
-                                <i className="ri-smartphone-line"></i>
-                            </a>
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="mailto:dangechetan3@gmail.com?subject=Hello&body=I%20hope%20this%20finds%20you%20well!"
-                                aria-label="Email"
-                                className="hover:text-blue-600">
-                                <i className="ri-mail-line"></i>
-                            </a>
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://www.linkedin.com/in/chetan-dange/"
-                                aria-label="LinkedIn"
-                                className="hover:text-blue-500">
-                                <i className="ri-linkedin-fill"></i>
-                            </a>
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://github.com/chetanRDange/"
-                                aria-label="GitHub"
-                                className="hover:text-blue-400">
-                                <i className="ri-github-line"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* About Content */}
-                    <div className="max-w-3xl mt-6 sm:mt-8 space-y-6">
-                        <h1 className="text-3xl sm:text-5xl font-bold">About Me</h1>
-                        <p className="text-sm sm:text-lg leading-relaxed">
-                            Hi, I'm <span className="font-semibold">Chetan</span>. I'm a software engineer passionate about technology and design. Currently, I'm working on a project called <span className="font-semibold">Streamify</span>, a React web app that lets users stream movies, TV shows, and music. It features new movie releases, with trailers available to watch. Built with Axios for API integration and Redux for state management, it ensures a smooth and engaging streaming experience.
-                        </p>
-                        <div className="flex flex-col items-start space-y-2">
-                            <div>Email: <a href="mailto:dangechetan3@gmail.com" className="hover:underline">dangechetan3@gmail.com</a></div>
-                            <div>Mobile: <a href="tel:8459011161" className="hover:underline">8459011161</a></div>
-                            <div>LinkedIn: <a href="https://www.linkedin.com/in/chetan-dange/" className="hover:underline">linkedin.com/in/chetan-dange</a></div>
-                            <div>GitHub: <a href="https://github.com/chetanRDange/" className="hover:underline">github.com/ChetanRDange</a></div>
-                        </div>
-                    </div>
-
-                    {/* Decorative Separator */}
-                    <div className="border-t border-zinc-600 w-full max-w-2xl mt-6 sm:mt-10"></div>
-
-                    {/* Additional Skills Section */}
-                    <div className="max-w-3xl mt-6 sm:mt-8 space-y-4 sm:space-y-6">
-                        <h2 className="text-2xl sm:text-4xl font-semibold">Skills</h2>
-                        <p className="text-sm sm:text-lg">
-                            Proficient in <span className="text-blue-400 font-medium">Front-End Technology</span> and Expert in <span className="text-blue-400 font-medium">React.js</span>, <span className="text-blue-400 font-medium">Redux</span>, <span className="text-blue-400 font-medium">API</span>, <span className="text-blue-400 font-medium">JavaScript</span>, and exploring the full MERN stack.
-                        </p>
+            {/* Header */}
+            <div className="sticky top-0 bg-[#1F1E24] z-30 border-b border-zinc-800">
+                <div className="px-4 py-4">
+                    <div className="flex items-center">
+                        <button
+                            onClick={() => navigate(-1)}
+                            className="mr-4 p-2 text-zinc-400 hover:text-[#6556CD] hover:bg-zinc-800 rounded-full transition-colors"
+                        >
+                            <i className="ri-arrow-left-line text-xl"></i>
+                        </button>
+                        <h1 className="text-xl md:text-2xl font-semibold text-white">
+                            About
+                        </h1>
                     </div>
                 </div>
             </div>
+
+            {/* Content */}
+            <div className="px-4 py-8 md:px-8 lg:px-12 max-w-6xl mx-auto">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
+                    {/* Image Section */}
+                    <div className="flex-shrink-0">
+                        <img
+                            className="object-cover w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-2xl shadow-2xl"
+                            src="/photo.jpeg"
+                            alt="Chetan"
+                        />
+                    </div>
+
+                    {/* Content Section */}
+                    <div className="flex flex-col w-full text-center lg:text-left text-white">
+                        {/* Social Links */}
+                        <div className="flex justify-center lg:justify-start gap-4 mb-6">
+                            <a
+                                target="_blank"
+                                href="https://www.linkedin.com/in/chetan-dange/"
+                                className="p-3 bg-blue-600 hover:bg-blue-700 rounded-full transition-colors"
+                                rel="noopener noreferrer"
+                            >
+                                <i className="ri-linkedin-fill text-xl"></i>
+                            </a>
+                            <a
+                                target="_blank"
+                                href="https://github.com/ChetanRDange"
+                                className="p-3 bg-gray-700 hover:bg-gray-600 rounded-full transition-colors"
+                                rel="noopener noreferrer"
+                            >
+                                <i className="ri-github-fill text-xl"></i>
+                            </a>
+                            <a
+                                href="mailto:dangechetan3@gmail.com"
+                                className="p-3 bg-red-600 hover:bg-red-700 rounded-full transition-colors"
+                            >
+                                <i className="ri-mail-fill text-xl"></i>
+                            </a>
+                            <a
+                                href="tel:8459011161"
+                                className="p-3 bg-green-600 hover:bg-green-700 rounded-full transition-colors"
+                            >
+                                <i className="ri-phone-fill text-xl"></i>
+                            </a>
+                        </div>
+
+                        {/* About Content */}
+                        <div className="space-y-6">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6556CD]">
+                                About Me
+                            </h1>
+                            <p className="text-sm md:text-base lg:text-lg leading-relaxed text-zinc-300">
+                                Hi, I'm <span className="font-semibold text-white">Chetan</span>. I'm a software engineer passionate about technology and design. Currently, I'm working on a project called <span className="font-semibold text-[#6556CD]">Streamify</span>, a React web app that lets users stream movies, TV shows, and music. It features new movie releases, with trailers available to watch. Built with Axios for API integration and Redux for state management, it ensures a smooth and engaging streaming experience.
+                            </p>
+
+                            {/* Contact Info */}
+                            <div className="bg-zinc-800 rounded-lg p-6 space-y-3">
+                                <h3 className="text-lg font-semibold mb-4">Get in Touch</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                                    <div className="flex items-center">
+                                        <i className="ri-mail-line text-[#6556CD] mr-3"></i>
+                                        <a href="mailto:dangechetan3@gmail.com" className="hover:text-[#6556CD] transition-colors">
+                                            dangechetan3@gmail.com
+                                        </a>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <i className="ri-phone-line text-[#6556CD] mr-3"></i>
+                                        <a href="tel:8459011161" className="hover:text-[#6556CD] transition-colors">
+                                            8459011161
+                                        </a>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <i className="ri-linkedin-line text-[#6556CD] mr-3"></i>
+                                        <a href="https://www.linkedin.com/in/chetan-dange/" target="_blank" rel="noopener noreferrer" className="hover:text-[#6556CD] transition-colors">
+                                            LinkedIn Profile
+                                        </a>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <i className="ri-github-line text-[#6556CD] mr-3"></i>
+                                        <a href="https://github.com/chetanRDange/" target="_blank" rel="noopener noreferrer" className="hover:text-[#6556CD] transition-colors">
+                                            GitHub Profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Skills Section */}
+                            <div className="bg-zinc-800 rounded-lg p-6">
+                                <h2 className="text-xl md:text-2xl font-semibold mb-4 text-[#6556CD]">Skills & Technologies</h2>
+                                <div className="flex flex-wrap gap-2">
+                                    {['React.js', 'Redux', 'JavaScript', 'API Integration', 'HTML/CSS', 'Tailwind CSS', 'Git', 'Responsive Design'].map((skill) => (
+                                        <span key={skill} className="px-3 py-1 bg-[#6556CD] text-white text-sm rounded-full">
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom Navigation */}
+            <BottomNav />
         </div>
     );
-}
+};
 
 export default About;
